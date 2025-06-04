@@ -8,7 +8,7 @@
     gap: 10px;
 }
 
-.main-screen, .creation-screen {
+.main-screen, .creation-screen, .edit-screen {
     flex-direction: column;
     max-width: 600px;
     margin: 0 auto;
@@ -27,7 +27,7 @@
     gap: 10px;
 }
 
-.button {
+.button, .edit-button {
     background-color: #3399dd;
     padding: 8px 12px;
     color: white;

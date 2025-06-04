@@ -12,7 +12,7 @@
         <label class="label">Для взаимодействия c возможностями сайта, пожалуйста введите ваше имя.</label>
         <input type="text" class="input" id="welcome-name-input">
         <button type="submit" class="button" id="next-button">Далее</button>
-        <script src="script/ui/welcome-screen.js"></script>
+        <script type="module" src="script/ui/welcome-screen.js"></script>
     </section>
     <section class="main-screen" id="main-screen">
         <label class="title-label" id="main-screen-title"></label>
@@ -28,12 +28,29 @@
         <label class="title-label" id="creation-screen-title">Создание записи</label>
         <button class="button" id="back-button">На главную</button>
         <input type="text" class="input" id="creation-name-input" placeholder="Имя">
-        <input type="text" class="input" id="creation-lastname-input" placeholder="Фамилию">
+        <input type="text" class="input" id="creation-lastname-input" placeholder="Фамилия">
         <input type="text" class="input" id="creation-phone-input" placeholder="Номер телефона">
-        <input type="text" class="input" id="creation-email-input" placeholder="Адрес электронной почты">
-        <input type="text" class="input" id="creation-email-input" placeholder="Название улицы, номер дома">
+        <input type="text" class="input" id="creation-email-input" placeholder="Email">
+        <div>
+            <input type="text" class="input" id="creation-address-input" placeholder="Улица">
+            <input type="text" class="input" id="creation-address-num-input" placeholder="Дом">
+        </div>
         <button class="button" id="creation-button">Создать запись</button>
         <script type="module" src="script/ui/creation-screen.js"></script>
+    </section>
+    <section class="edit-screen" id="edit-screen">
+        <label class="title-label">Редактирование записи</label>
+        <button class="button" id="cancel-edit-button">Отмена</button>
+        <input type="text" class="input" id="edit-name-input" placeholder="Имя">
+        <input type="text" class="input" id="edit-lastname-input" placeholder="Фамилия">
+        <input type="text" class="input" id="edit-phone-input" placeholder="Номер телефона">
+        <input type="text" class="input" id="edit-email-input" placeholder="Email">
+        <div>
+            <input type="text" class="input" id="edit-address-input" placeholder="Улица">
+            <input type="text" class="input" id="edit-address-num-input" placeholder="Дом">
+        </div>
+        <button class="button" id="save-edit-button">Сохранить</button>
+        <script type="module" src="script/ui/edit-screen.js"></script>
     </section>
 </body>
 </html>

@@ -1,3 +1,5 @@
+import { init } from '../ui/main-screen.js';
+
 let nextButton = document.getElementById("next-button");
 let nameInput = document.getElementById("welcome-name-input");
 
@@ -27,4 +29,5 @@ nextButton.addEventListener('click', () => {
     document.getElementById("main-screen-title").textContent = `Привет, ${nameInput.value}!`;
     document.getElementById("welcome-screen").style.display = 'none';
     document.getElementById("main-screen").style.display = 'flex';
+    init();
 });
