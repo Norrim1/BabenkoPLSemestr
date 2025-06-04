@@ -8,6 +8,16 @@
     gap: 10px;
 }
 
+.main-screen {
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    gap: 10px;
+    display: none;
+}
+
 .welcome-input {
     padding: 8px 12px;
     border: 1px solid #ddd;
@@ -46,4 +56,17 @@
     width: 600px;
     font-size: 20px;
     color: #333;
+}
+
+.persons-container {
+    display: grid;
+    gap: 16px;
+}
+
+.person-card {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    background: white;
 }

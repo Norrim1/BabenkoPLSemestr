@@ -24,5 +24,7 @@ nextButton.addEventListener('click', () => {
         alert('Имя не должно содержать цифр, пробелов или специальных символов.');
         return;
     }
+    document.getElementById("main-screen-title").textContent = `Привет, ${nameInput.value}!`;
     document.getElementById("welcome-screen").style.display = 'none';
+    document.getElementById("main-screen").style.display = 'flex';
 });
