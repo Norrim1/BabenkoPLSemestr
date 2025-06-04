@@ -8,7 +8,7 @@
     gap: 10px;
 }
 
-.main-screen {
+.main-screen, .creation-screen {
     flex-direction: column;
     max-width: 600px;
     margin: 0 auto;
@@ -18,15 +18,16 @@
     display: none;
 }
 
-.welcome-input {
+.input {
     padding: 8px 12px;
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 14px;
     text-align: center;
+    gap: 10px;
 }
 
-.next-button {
+.button {
     background-color: #3399dd;
     padding: 8px 12px;
     color: white;
@@ -37,7 +38,7 @@
     transition: background-color 0.3s;
 }
 
-.next-button:disabled {
+.button:disabled {
     background-color: rgb(158, 158, 158);
     color: white;
     cursor: not-allowed;
