@@ -8,7 +8,7 @@
     gap: 10px;
 }
 
-.registration-input {
+.welcome-input {
     padding: 8px 12px;
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -16,8 +16,8 @@
     text-align: center;
 }
 
-.welcome-button {
-    background-color: #3498db;
+.next-button {
+    background-color: #3399dd;
     padding: 8px 12px;
     color: white;
     border: 1px solid #ddd;
@@ -27,11 +27,18 @@
     transition: background-color 0.3s;
 }
 
+.next-button:disabled {
+    background-color: rgb(158, 158, 158);
+    color: white;
+    cursor: not-allowed;
+}
+
 .title-label {
     font-family: Arial, Helvetica, sans-serif;
     width: 600px;
     font-size: 40px;
     color: #333;
+    margin-bottom: 30px;
 }
 
 .label {
