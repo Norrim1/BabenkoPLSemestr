@@ -1,8 +1,11 @@
 import { showPersons, persons } from '../ui/main-screen.js';
 import { createNewPerson} from '../data/add-change.js';
+import { validName, validEmail, validPhone } from './input-checks.js';
 
 let backButton = document.getElementById('back-button');
 let creationButton = document.getElementById('creation-button');
+document.getElementById("creation-phone-input").addEventListener('input', validPhone);
+
 
 creationButton.addEventListener('click', createPerson);
 

@@ -1,5 +1,5 @@
 import { loadPersons } from '../data/load-person.js';
-import { filterAllFields } from '../data/search.js';
+import { filterAllFields, setupAdvancedSearch } from '../data/search.js';
 import { deletePerson } from '../data/add-change.js';
 
 let searchInput = document.getElementById('search-input');
@@ -82,4 +82,5 @@ export async function init()
 {
     persons = await loadPersons(10);
     showPersons(persons);
+    setupAdvancedSearch(persons, showPersons);
 }

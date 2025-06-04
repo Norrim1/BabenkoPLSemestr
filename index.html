@@ -19,14 +19,34 @@
         <div class = "search">
             <input type="text" class="input" id="search-input" placeholder="Поиск">
             <button class="button" id="search-button">Поиск</button>
+            <button class="button" id="advanced-search-toggle">Улучшенный поиск</button>
+        </div>
+        <div id="advanced-search" style="display: none;">
+            <div class="search-row">
+                <input type="checkbox" class="search-checkbox" data-field="name" >
+                <input type="text" class="input" id="search-name" placeholder="Имя" disabled>
+            </div>
+            <div class="search-row">
+                <input type="checkbox" class="search-checkbox" data-field="lastname">
+                <input type="text" class="input" id="search-lastname" placeholder="Фамилия" disabled>
+            </div>
+            <div class="search-row">
+                <input type="checkbox" class="search-checkbox" data-field="phone" >
+                <input type="text" class="input" id="search-phone" placeholder="Номер телефона" disabled>
+            </div>
+            <div class="search-row">
+                <input type="checkbox" class="search-checkbox" data-field="email">
+                <input type="text" class="input" id="search-email" placeholder="Email" disabled>
+            </div>
+            <button class="button" id="advanced-search-button">Начать поиск</button>
         </div>
         <button class="button" id="to-creation-button">Создать запись</button>
-        <div сlass="persons-list" id="persons-list"></div>
+        <div class="persons-list" id="persons-list"></div>
         <script type="module" src="script/ui/main-screen.js"></script>
     </section>
     <section class="creation-screen" id="creation-screen">
         <label class="title-label" id="creation-screen-title">Создание записи</label>
-        <button class="button" id="back-button">На главную</button>
+        <button class="button" id="back-button">Отмена</button>
         <input type="text" class="input" id="creation-name-input" placeholder="Имя">
         <input type="text" class="input" id="creation-lastname-input" placeholder="Фамилия">
         <input type="text" class="input" id="creation-phone-input" placeholder="Номер телефона">

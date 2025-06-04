@@ -1,4 +1,5 @@
 import { init } from '../ui/main-screen.js';
+import { validName } from './input-checks.js';
 
 let nextButton = document.getElementById("next-button");
 let nameInput = document.getElementById("welcome-name-input");
@@ -7,11 +8,6 @@ nameInput.addEventListener('input', checkName);
 nameInput.addEventListener('change', checkName);
 
 nextButton.disabled = true;
-
-function validName(name) {
-    const regex = /^[a-zA-Zа-яА-ЯёЁ]+$/;
-    return regex.test(name);
-}
 
 function checkName() {
     let nameFilledCorrectly = true;

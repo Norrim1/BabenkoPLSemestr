@@ -1,11 +1,13 @@
 import { showPersons, persons, personId } from './main-screen.js';
 import { editExistingPerson } from '../data/add-change.js';
+import { validName, validEmail, validPhone } from './input-checks.js';
 
 const saveEditButton = document.getElementById('save-edit-button');
 const cancelEditButton = document.getElementById('cancel-edit-button');
 
 saveEditButton.addEventListener('click', saveEditedPerson);
-cancelEditButton.addEventListener('click', cancelEdit);
+cancelEditButton.addEventListener('click', closeEditForm);
+document.getElementById("edit-phone-input").addEventListener('input', validPhone);
 
 function saveEditedPerson() {
     const name = document.getElementById("edit-name-input").value.trim();
@@ -15,8 +17,18 @@ function saveEditedPerson() {
     const address = document.getElementById("edit-address-input").value.trim();
     const number = document.getElementById("edit-address-num-input").value.trim();
 
-    if (!name || !lastname) {
-        alert("Поля 'Имя' и 'Фамилия' обязательны!");
+    if (!name || !validName(name)) {
+        alert("Имя не должно содержать цифр, пробелов или специальных символов.");
+        return;
+    }
+
+    if (!lastname || !validName(lastname)) {
+        alert("Фамилия не должна содержать цифр, пробелов или специальных символов.");
+        return;
+    }
+
+    if (!email || !validEmail(email)) {
+        alert("Имя не должно содержать цифр, пробелов или специальных символов.");
         return;
     }
 
@@ -31,10 +43,6 @@ function saveEditedPerson() {
     closeEditForm();
     showPersons(persons);
     alert("Изменения сохранены!");
-}
-
-function cancelEdit() {
-    closeEditForm();
 }
 
 function closeEditForm() {
