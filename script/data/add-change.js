@@ -1,5 +1,8 @@
 export function createNewPerson(name, lastname, phone, email, address, number) {
     return {
+        login: {
+            uuid: String(Math.floor(Math.random() * 1000))
+        },
         name: {
             first: name,
             last: lastname
@@ -32,4 +35,8 @@ export function editExistingPerson(person, newData) {
             city: person.location.city || ''
         }
     };
+}
+
+export function deletePerson(personsList, personId) {
+    return personsList.filter(person => person.login.uuid !== personId);
 }

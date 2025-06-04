@@ -1,5 +1,6 @@
 import { loadPersons } from '../data/load-person.js';
 import { filterAllFields } from '../data/search.js';
+import { deletePerson } from '../data/add-change.js';
 
 let searchInput = document.getElementById('search-input');
 let searchButton = document.getElementById('search-button');
@@ -29,19 +30,32 @@ export function showPersons(persons) {
             <p>Телефон: ${person.phone}</p>
             <p>Электронная почта: ${person.email}</p>
             <p>Адрес: ${person.location.street.name} ${person.location.street.number}</p>
-            <button class="edit-button" data-id="${person.login.uuid}">Редактировать</button>`;
+            <div>
+                <button class="edit-button" data-id="${person.login.uuid}">Редактировать</button>
+                <button class="delete-button" data-id="${person.login.uuid}">Удалить</button>
+            </div>`;
             
             personList.appendChild(personCard);
     });
-    setupEditButtons();
+    setupListButtons();
 }
 
-function setupEditButtons() {
+function setupListButtons() {
     document.querySelectorAll('.edit-button').forEach(btn => {
         btn.addEventListener('click', (e) => {
             personId = e.target.dataset.id;
             const person = persons.find(p => p.login.uuid === personId);
             openEditForm(person);
+        });
+    });
+    document.querySelectorAll('.delete-button').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const personId = e.target.dataset.id;
+            if (confirm('Вы уверены, что хотите удалить эту запись?')) {
+                persons = deletePerson(persons, personId);
+                showPersons(persons);
+                alert('Запись удалена');
+            }
         });
     });
 }

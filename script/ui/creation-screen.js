@@ -18,7 +18,6 @@ function createPerson() {
     let email = document.getElementById("creation-email-input").value.trim();
     let address = document.getElementById("creation-address-input").value.trim();
     let number = document.getElementById("creation-address-num-input").value.trim();
-
     if (!name || !lastname) {
         alert("Поля 'Имя' и 'Фамилия' обязательны для заполнения!");
         return;
